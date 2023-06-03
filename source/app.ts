@@ -1,3 +1,9 @@
+interface Price {
+    price: number,
+    discount: number,
+    months: number,
+}
+
 totalPrice({price: 100000, discount: 25, months: 12}); // 6250
 
 /**
