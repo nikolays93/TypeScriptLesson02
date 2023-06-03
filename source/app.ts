@@ -20,3 +20,18 @@ function totalPrice({price, discount, months}: Price): number {
         // Calculate common.
         discountPrice(price, discount);
 }
+
+/**
+ * Calculate instalment price in month.
+ */
+function totalInstallmentPrice(price: number, discount: number, months: number): number {
+    if (months <= 0) throw Error('Months is incorrect');
+    return discountPrice(price, discount) / months;
+}
+
+/**
+ * Calculate price with discount.
+ */
+function discountPrice(price: number, discount: number): number {
+    return price * (1 - (discount / 100));
+}
