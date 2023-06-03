@@ -12,7 +12,7 @@ module.exports = (env, opts) => {
     };
 
     const plugins = {
-        // html: require('./webpack/plugins/html')(config),
+        html: require('./webpack/plugins/html')(config),
         uglify: require('./webpack/plugins/uglify')(config),
         // extractStyles: require('./webpack/plugins/extract-styles')(config),
     };
@@ -42,7 +42,7 @@ module.exports = (env, opts) => {
             extensions: [".ts", ".tsx", ".js"],
         },
         plugins: [
-            // plugins.html,
+            plugins.html,
             // plugins.extractStyles,
         ],
         devtool: !config.isProduction ? "inline-source-map" : false,
